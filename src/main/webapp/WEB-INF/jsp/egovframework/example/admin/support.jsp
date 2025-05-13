@@ -34,6 +34,7 @@
 											<th>연락처</th>
 											<th>이메일</th>
 											<th>날짜</th>
+											<th>읽음여부</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -44,6 +45,7 @@
 												<td>${item.phone}</td>
 												<td>${item.email}</td>
 												<td><fmt:formatDate value="${item.sdate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+												<td>${item.readyn == 0 ? 'N' : 'Y'}</td>
 											</tr>
 										</c:forEach>
 									</tbody>

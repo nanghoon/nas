@@ -114,7 +114,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/support.do")
-	public String user(HttpServletRequest request, Model model){
+	public String support(HttpServletRequest request, Model model){
 		String pageIndex = request.getParameter("pageIndex");
 		PaginationInfo pi = new PaginationInfo();
 		if(Utils.isNull(pageIndex)) pi.setCurrentPageNo(1);
@@ -133,5 +133,17 @@ public class AdminController {
 		model.addAttribute("list", list);
 		model.addAttribute("pi", pi);
 		return "admin/support";
+	}
+	@RequestMapping(value="/supportInfo.do")
+	public String supportInfo(HttpServletRequest request, Model model){
+		String idx = request.getParameter("idx");
+		EgovMap info = (EgovMap)sampleDAO.select("selectSupportInfo",idx);
+		if(Integer.parseInt(""+info.get("readyn")) == 0)
+			sampleDAO.update("updateSupportReadY",idx);
+		
+		info.put("email", Utils.decryptGCM(info.get("email").toString(), Utils.getKey(globalProperties)));
+		info.put("phone", Utils.decryptGCM(info.get("phone").toString(), Utils.getKey(globalProperties)));
+		model.addAttribute("info",info );
+		return "admin/supportInfo";
 	}
 }

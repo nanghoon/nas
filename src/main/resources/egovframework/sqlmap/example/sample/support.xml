@@ -41,4 +41,18 @@
 				  , #text# )
 		]]>
 	</insert>
+	<select id="selectSupportInfo" resultClass="EgovMap">
+        <![CDATA[
+            SELECT *
+            FROM support
+            where idx = #idx#
+        ]]>
+	</select>
+	<update id="updateSupportReadY">
+		<![CDATA[
+			UPDATE support
+			SET readyn = 1
+			WHERE idx=#idx#
+		]]>
+	</update>
 </sqlMap>

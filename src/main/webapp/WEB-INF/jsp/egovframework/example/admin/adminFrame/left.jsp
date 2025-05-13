@@ -13,7 +13,7 @@
 			<span class="icon-bar"></span> 
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#">NAS</a>
+		<a class="navbar-brand" href="/nas/admin/support.do">NAS</a>
 	</div>
 	<ul class="nav navbar-top-links navbar-right">
 		<li><a href="/nas/admin/logout.do"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
