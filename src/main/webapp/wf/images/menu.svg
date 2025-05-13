@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_325" data-name="사각형 325" width="24" height="24" transform="translate(320 16)" fill="#397bbe"/>
+    </clipPath>
+  </defs>
+  <g id="menu" transform="translate(-320 -16)" clip-path="url(#clip-path)">
+    <path id="menu_24dp_1F1F1F_FILL0_wght300_GRAD0_opsz24" d="M4.941-8.987V-11.1h24v2.117h-24Zm0-6.9V-18h24v2.118Zm0-6.9V-24.9h24v2.117Z" transform="translate(315.059 44.941)" fill="#397bbe"/>
+  </g>
+</svg>

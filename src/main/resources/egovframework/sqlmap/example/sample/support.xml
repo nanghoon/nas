@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Sample">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
+	<select id="checkAdminId" resultClass="EgovMap">
+        <![CDATA[
+            SELECT *
+            FROM admin
+            where id=#id#
+        ]]>
+	</select>
+	<select id="selectSupportListCnt" resultClass="int">
+        <![CDATA[
+            SELECT count(*)
+            FROM support
+	       	]]>
+	</select>
+	<select id="selectSupportList" resultClass="EgovMap">
+        <![CDATA[
+            SELECT *
+            FROM support
+            order by idx desc
+        	limit #first# , #record#
+       	]]>
+	</select>
+	<insert id="insertSupport">
+		<![CDATA[
+			INSERT INTO support
+				( company
+				  , name
+				  , email
+				  , phone
+				  , text)
+			VALUES ( #company#
+				  , #name#
+				  , #email#
+				  , #phone#
+				  , #text# )
+		]]>
+	</insert>
+</sqlMap>
